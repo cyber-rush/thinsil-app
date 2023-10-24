@@ -47,6 +47,10 @@ const myState = ({ children }) => {
             const productRef = collection(fireDB, 'products')
             await addDoc(productRef, products)
             toast.success("Product added sucessfully")
+
+            setTimeout(() => {                                //Redirects the user to dashboard page once the producted is added
+                window.location.href = '/dashboard'
+            }, 8000)
             getProductData()
             setLoading(false)
         } catch (error) {
