@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-const initialState = [];
+const initialState = JSON.parse(localStorage.getItem('cart')) ?? [];   // if no cart items then empty array otherwise a value
 
 const cartSlice = createSlice({
     name: 'cart',
